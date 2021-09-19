@@ -20,7 +20,7 @@ patch:
   ascii_composer/switch_key:
     Caps_Lock: commit_code                    
     Shift_L: noop                    # 左Shift   关闭noop
-    Shift_R: commit_code                    # 右Shift
+    Shift_R: inline_ascii                    # 右Shift
     Control_L: noop                         # 左Control
     Control_R: noop                         # 右Control
 
@@ -39,8 +39,16 @@ patch:
     #- {accept: apostrophe, send: 3, when: has_menu} # 候选3 用单引号
  
 # 快捷键(若要开启,去掉前面的#号)
-    #- {accept: "Control+a", send: Home, when: composing}                   # 光标移至首
-    #- {accept: "Control+e", send: End, when: composing}                    # 光标移至尾
+    - {accept: "Control+p", send: Up, when: composing}
+    - {accept: "Control+n", send: Down, when: composing}
+    - {accept: "Control+b", send: Left, when: composing}
+    - {accept: "Control+f", send: Right, when: composing}
+    # - {accept: "Control+a", send: Home, when: composing}        # 光标移至首
+    # - {accept: "Control+e", send: End, when: composing}         # 光标移至尾
+    # - {accept: "Control+d", send: Delete, when: composing}
+    # - {accept: "Control+k", send: "Shift+Delete", when: composing}
+    # - {accept: "Control+h", send: BackSpace, when: composing}
+    - {accept: "Control+g", send: Escape, when: composing}                  # 取消候选框
     #- {accept: "Control+Shift+1", select: .next, when: always}             # 切换输入方案
     #- {accept: "Control+Shift+2", toggle: ascii_mode, when: always}        # 中英文切换
     #- {accept: "Control+Shift+3", toggle: full_shape, when: always}        # 全角/半角切换
