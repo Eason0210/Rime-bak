@@ -16,7 +16,7 @@ patch:
       - simplifier
       - simplifier@emoji_conversion
       - uniquifier
-      - charset_filter@gbk              # (※3) GBK 过滤
+      # - charset_filter@gbk              # (※3) GBK 过滤
       - single_char_filter
 
   emoji_conversion:
